@@ -1,21 +1,22 @@
-import { faBeer, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import type { NextPage } from "next";
 import Head from "next/head";
-
-import Link from "next/link";
 import { Keyboard } from "../components/elements/Keyboard/Keyboard";
+import { Blocks } from "../components/elements/Game/Blocks";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="">
       <Head>
-        <title>BIGBrave Next</title>
+        <title>Christian Wordle</title>
         <meta name="description" content="My BIGBrave Project" />
         <link rel="icon" href="/favicon/icon-48x48.png" />
       </Head>
-      <Keyboard />
+      <div className="flex justify-center items-center">
+        <Blocks />
+      </div>
+      <div className="absolute m-auto left-0 right-0 bottom-2">
+        <Keyboard />
+      </div>
     </div>
   );
 };

@@ -1,18 +1,21 @@
 import React from "react";
+import { useKeyboard } from "../../../context/Keyboard/keyboard";
 
 export const Keyboard = () => {
   const rowOne = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
   const rowTwo = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
   const rowThree = ["enter", "Z", "X", "C", "V", "B", "N", "M", "delete"];
+
+  const { setCurrentKey, key } = useKeyboard();
   return (
-    <div className="absolute bottom-0 pb-4">
+    <div className="">
       <div className="flex gap-1 justify-center ">
         {rowOne.map((e, idx) => {
           return (
             <div
               key={idx}
               className="flex border-2 gap-3 rounded-md w-8 md:w-12 h-20 md:h-10 justify-center"
-              onClick={() => console.log(e)}
+              onClick={() => setCurrentKey(e)}
             >
               <div
                 className="flex flex-col justify-center text-center p-2"
@@ -30,7 +33,7 @@ export const Keyboard = () => {
             <div
               key={idx}
               className="flex border-2 gap-3 rounded-md w-8 md:w-12 h-20 md:h-10 justify-center"
-              onClick={() => console.log(e)}
+              onClick={() => setCurrentKey(e)}
             >
               <div
                 className="flex flex-col justify-center text-center p-2"
@@ -49,7 +52,7 @@ export const Keyboard = () => {
               <div
                 key={idx}
                 className="flex border-2 gap-3 rounded-md w-12 md:w-20 h-20 md:h-10 justify-center"
-                onClick={() => console.log("enter")}
+                onClick={() => setCurrentKey(e)}
               >
                 <div
                   className="flex flex-col justify-center text-center p-2"
@@ -64,7 +67,7 @@ export const Keyboard = () => {
               <div
                 key={idx}
                 className="flex border-2 gap-3 rounded-md w-12 md:w-20 h-20 md:h-10 justify-center"
-                onClick={() => console.log("delete")}
+                onClick={() => console.log(key)}
               >
                 <div
                   className="flex flex-col justify-center text-center p-2"
@@ -79,7 +82,7 @@ export const Keyboard = () => {
               <div
                 key={idx}
                 className="flex border-2 gap-3 rounded-md w-8 md:w-12 h-20 md:h-10 justify-center"
-                onClick={() => console.log(e)}
+                onClick={() => setCurrentKey(e)}
               >
                 <div
                   className="flex flex-col justify-center text-center p-2"
