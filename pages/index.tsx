@@ -11,6 +11,9 @@ const Home: NextPage = () => {
         <meta name="description" content="My BIGBrave Project" />
         <link rel="icon" href="/favicon/icon-48x48.png" />
       </Head>
+      <div>
+        <h1 className="text-center text-4xl font-bold">Christian Wordle</h1>
+      </div>
       <div className="flex justify-center items-center">
         <Blocks />
       </div>
